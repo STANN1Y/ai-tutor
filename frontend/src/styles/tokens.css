@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light;
+  --paper: #f1f2ec;
+  --page: #fbfbf7;
+  --ink: #181a1b;
+  --graphite: color-mix(in srgb, var(--ink) 62%, transparent);
+  --cobalt: #1f3fa3;
+  --red-pencil: #b23a2e;
+  --highlighter: #f1d45b;
+
+  --cover-cobalt: #1f3fa3;
+  --cover-oxblood: #6e2b2b;
+  --cover-forest: #2e5b46;
+  --cover-ochre: #a9761f;
+
+  --font-serif: 'Spectral', Georgia, serif;
+  --font-sans: 'Familjen Grotesk Variable', system-ui, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+
+  --max-width: 66ch;
+  --gutter: 24px;
+  --margin-gutter: 48px;
+  --tab-width: 48px;
+  --header-height: 56px;
+
+  --shadow-none: none;
+  --radius: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

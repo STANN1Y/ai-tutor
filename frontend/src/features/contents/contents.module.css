@@ -1,0 +1,442 @@
+.page {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-6);
+  background: var(--page);
+  border-bottom: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--ink);
+  border-bottom: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.back:hover {
+  border-bottom: none;
+  color: var(--cobalt);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.sourcesLink {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cobalt);
+  border-bottom: none;
+}
+
+.sourcesLink:hover {
+  border-bottom: 1px solid var(--cobalt);
+}
+
+.headerMeta {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--graphite);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 64px;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.content {
+  padding: var(--space-8) var(--space-8) var(--space-16);
+  border-right: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-2);
+}
+
+.intro {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--graphite);
+  margin: 0;
+  max-width: 52ch;
+}
+
+.toc {
+  margin-top: var(--space-8);
+  border-top: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-3);
+  border-bottom: 1px solid color-mix(in srgb, var(--graphite) 22%, transparent);
+  color: var(--ink);
+  text-decoration: none;
+  border-left: none;
+  transition: background-color 120ms ease;
+}
+
+.row:hover {
+  background: color-mix(in srgb, var(--ink) 4%, transparent);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: -2px;
+  box-shadow: none;
+}
+
+.rowComplete {
+  background: color-mix(in srgb, var(--highlighter) 32%, transparent);
+}
+
+.rowNext {
+  box-shadow: inset 3px 0 0 var(--red-pencil);
+}
+
+.number {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--graphite);
+  text-align: right;
+}
+
+.rowMain {
+  min-width: 0;
+}
+
+.rowTitle {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 400;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nextLabel {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--red-pencil);
+}
+
+.completeLabel {
+  display: block;
+  margin-top: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--graphite);
+}
+
+.check {
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.progressBlock {
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.progressHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.progressTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.progressMeta {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--graphite);
+}
+
+.progressButton {
+  width: 100%;
+}
+
+.continueLabel {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+.tabStrip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-8) 0 0 var(--space-2);
+  position: sticky;
+  top: 80px;
+  align-self: start;
+}
+
+.tab {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: var(--space-2) var(--space-1);
+  background: var(--page);
+  color: var(--graphite);
+  border: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+  border-left: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.tab:hover {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 4%, var(--page));
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.tabActive {
+  background: var(--cobalt);
+  color: var(--page);
+  border-color: var(--cobalt);
+}
+
+.tabActive:hover {
+  background: var(--cobalt);
+  color: var(--page);
+}
+
+.tabComplete {
+  background: var(--highlighter);
+  color: var(--ink);
+}
+
+.tabComplete.tabActive {
+  background: var(--cobalt);
+  color: var(--page);
+}
+
+.card {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  background: var(--page);
+  border: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+  border-left: 4px solid var(--cobalt);
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.cardBadge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  background: var(--cobalt);
+  color: var(--page);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.cardPrompt {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 var(--space-3);
+  max-width: 58ch;
+}
+
+.cardHint {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--graphite);
+  margin: 0 0 var(--space-4);
+}
+
+.cardAnswer {
+  margin: 0;
+  padding: var(--space-3) 0 0;
+  border-top: 1px solid color-mix(in srgb, var(--graphite) 25%, transparent);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  color: var(--graphite);
+}
+
+.cardForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 58ch;
+}
+
+.cardActions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.cardAnswered {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.loading,
+.missing {
+  min-height: 100vh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--graphite);
+}
+
+@media (max-width: 760px) {
+  .header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .headerMeta {
+    display: none;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
+    border-right: none;
+    padding: var(--space-6) var(--space-4) var(--space-12);
+    order: 2;
+  }
+
+  .tabStrip {
+    order: 1;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0 var(--space-4);
+    position: sticky;
+    top: 53px;
+    background: var(--page);
+    border-bottom: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+    z-index: 9;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    min-width: 52px;
+    min-height: 44px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .tabActive {
+    border-bottom-color: var(--cobalt);
+    background: transparent;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  .tabActive:hover {
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .tabComplete {
+    background: var(--highlighter);
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .row {
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    gap: var(--space-3);
+  }
+
+  .rowTitle {
+    font-size: 18px;
+    white-space: normal;
+  }
+}
+
+.emptyToc {
+  margin-top: var(--space-8);
+  padding: var(--space-8) 0;
+  border-top: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.emptyTocTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+}
+
+.emptyTocText {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--graphite);
+  margin: 0 0 var(--space-4);
+  max-width: 54ch;
+}

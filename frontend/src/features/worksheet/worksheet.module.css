@@ -1,0 +1,564 @@
+.page {
+  min-height: 100vh;
+  max-width: 1120px;
+  margin: 0 auto;
+  background: var(--page);
+  border-left: 1px solid color-mix(in srgb, var(--graphite) 25%, transparent);
+  border-right: 1px solid color-mix(in srgb, var(--graphite) 25%, transparent);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-6);
+  background: var(--page);
+  border-bottom: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.crumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--ink);
+  border-bottom: none;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  min-width: 0;
+}
+
+.crumbs:hover {
+  border-bottom: none;
+  color: var(--cobalt);
+}
+
+.crumbCode {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.crumbSection {
+  color: var(--graphite);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sourcesLink {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--cobalt);
+  border-bottom: none;
+  flex-shrink: 0;
+}
+
+.sourcesLink:hover {
+  border-bottom: 1px solid var(--cobalt);
+}
+
+.body {
+  padding: var(--space-8) var(--space-8) var(--space-16);
+}
+
+.promptBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  column-gap: var(--space-12);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+}
+
+.promptText {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  max-width: 60ch;
+}
+
+.promptHint {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--graphite);
+  margin: 0;
+}
+
+.turn {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  column-gap: var(--space-12);
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--graphite) 22%, transparent);
+}
+
+.speaker {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--graphite);
+  margin: 0 0 var(--space-2);
+}
+
+.answer {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.7;
+  margin: 0;
+  white-space: pre-wrap;
+  max-width: 62ch;
+}
+
+.margin {
+  min-width: 0;
+}
+
+.note {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.55;
+  font-style: italic;
+  margin: 0;
+  border-left: 2px solid color-mix(in srgb, var(--graphite) 45%, transparent);
+  padding-left: var(--space-3);
+}
+
+.noteCorrection {
+  border-left-color: var(--red-pencil);
+  color: var(--red-pencil);
+}
+
+.noteText {
+  white-space: pre-wrap;
+}
+
+.noteHeader {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-bottom: var(--space-1);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--cobalt);
+  font-style: normal;
+}
+
+.noteCorrection .noteHeader {
+  color: var(--red-pencil);
+}
+
+.correctionTag {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--red-pencil);
+}
+
+.refs {
+  display: inline-flex;
+  gap: 2px;
+  margin-left: 2px;
+  font-style: normal;
+}
+
+.ref {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0 1px;
+  color: var(--cobalt);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  vertical-align: super;
+  cursor: pointer;
+}
+
+.ref:hover {
+  text-decoration: underline;
+}
+
+.ref:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.emptyMargin {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.55;
+  font-style: italic;
+  color: var(--graphite);
+  margin: 0;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  column-gap: var(--space-12);
+  padding-top: var(--space-8);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 62ch;
+}
+
+.formActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.formHint {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--graphite);
+  margin: 0;
+}
+
+.formError {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--red-pencil);
+  margin: 0;
+}
+
+.marginHint {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--graphite);
+  margin: 0;
+}
+
+.worked {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid color-mix(in srgb, var(--graphite) 25%, transparent);
+}
+
+.workedLabel {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--graphite);
+  margin: 0 0 var(--space-2);
+}
+
+.workedText {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0;
+  white-space: pre-wrap;
+  max-width: 62ch;
+}
+
+.footnotes {
+  padding-top: var(--space-8);
+  border-top: 1px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+  margin-top: var(--space-4);
+}
+
+.footnotesTitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--graphite);
+  margin: 0 0 var(--space-3);
+}
+
+.footnoteList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.footnote {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.footnoteButton {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.footnoteButton:hover {
+  color: var(--cobalt);
+}
+
+.footnoteButton:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.footnoteNum {
+  color: var(--cobalt);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: var(--space-1);
+}
+
+.quote {
+  margin: var(--space-2) 0 0 var(--space-5);
+  border-left: 2px solid color-mix(in srgb, var(--graphite) 40%, transparent);
+  padding-left: var(--space-3);
+  font-size: 13px;
+  color: var(--graphite);
+}
+
+.complete {
+  margin-top: var(--space-8);
+  padding: var(--space-8);
+  background-color: transparent;
+  background-image: linear-gradient(var(--highlighter), var(--highlighter));
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: var(--ink);
+  text-align: center;
+  animation: completeSweep 450ms ease-out;
+}
+
+@keyframes completeSweep {
+  from {
+    background-size: 0% 100%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}
+
+.completeTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 var(--space-2);
+}
+
+.completeBody {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  margin: 0;
+}
+
+.completeLink {
+  color: var(--cobalt);
+  border-bottom: 1px solid var(--cobalt);
+}
+
+.loading,
+.missing {
+  min-height: 100vh;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--graphite);
+}
+
+.drawer {
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  width: min(440px, 100vw);
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: none;
+  border-left: 2px solid var(--cobalt);
+  background: var(--page);
+  color: var(--ink);
+}
+
+.drawer::backdrop {
+  background: color-mix(in srgb, var(--ink) 45%, transparent);
+}
+
+.drawerBody {
+  padding: var(--space-8) var(--space-6);
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.drawerHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.drawerBadge {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cobalt);
+}
+
+.drawerTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 500;
+  margin: var(--space-1) 0 0;
+}
+
+.drawerClose {
+  background: none;
+  border: none;
+  color: var(--graphite);
+  cursor: pointer;
+  padding: var(--space-1);
+  flex-shrink: 0;
+}
+
+.drawerClose:hover {
+  color: var(--ink);
+}
+
+.drawerClose:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 2px;
+}
+
+.drawerPage {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--graphite);
+  margin: 0;
+}
+
+.drawerQuote {
+  margin: 0;
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--graphite);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.drawerLink {
+  margin-top: auto;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--cobalt);
+}
+
+@media (max-width: 900px) {
+  .page {
+    border-left: none;
+    border-right: none;
+  }
+
+  .body {
+    padding: var(--space-6) var(--space-5) var(--space-12);
+  }
+
+  .promptBlock,
+  .turn,
+  .formRow {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--space-4);
+  }
+
+  .promptBlock {
+    padding-bottom: var(--space-6);
+  }
+
+  .turn {
+    padding: var(--space-6) 0;
+  }
+
+  .margin {
+    padding-left: var(--space-3);
+    border-left: 2px solid color-mix(in srgb, var(--graphite) 30%, transparent);
+  }
+
+  .note {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .noteCorrection {
+    border-left: none;
+  }
+
+  .formRow {
+    padding-top: var(--space-6);
+  }
+
+  .form {
+    max-width: none;
+  }
+
+  .drawer {
+    width: 100vw;
+    border-left: none;
+    border-top: 2px solid var(--cobalt);
+    inset: auto 0 0 0;
+    height: min(80dvh, 720px);
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .crumbSection {
+    display: none;
+  }
+
+  .body {
+    padding: var(--space-6) var(--space-4) var(--space-12);
+  }
+
+  .promptText {
+    font-size: 20px;
+  }
+
+  .answer,
+  .noteText,
+  .workedText {
+    font-size: 17px;
+  }
+
+  .complete {
+    padding: var(--space-6);
+  }
+}

@@ -1,0 +1,11 @@
+# Secrets and local env
+.env
+.env.*
+!.env.demo
+!.env.example
+*.pem
+*.key
+
+# OS / tooling
+.DS_Store
+.opencode/

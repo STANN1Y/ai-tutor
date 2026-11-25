@@ -1,0 +1,139 @@
+@import './tokens.css';
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--cobalt);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1px;
+}
+
+a:hover {
+  border-bottom-width: 2px;
+}
+
+a:focus-visible {
+  outline: none;
+  border-bottom-width: 0;
+  box-shadow: 0 0 0 2px var(--cobalt), 0 0 0 4px var(--page);
+  border-radius: 2px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 var(--space-3) 0;
+  font-weight: 500;
+  line-height: 1.1;
+  font-family: var(--font-serif);
+}
+
+h1 { font-size: 60px; }
+h2 { font-size: 42px; }
+h3 { font-size: 32px; }
+h4 { font-size: 24px; }
+
+p {
+  margin: 0 0 var(--space-4) 0;
+  max-width: var(--max-width);
+}
+
+small, .caption {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.3;
+  color: var(--graphite);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+input, textarea, button, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  padding: var(--space-2) var(--space-3);
+  background: var(--cobalt);
+  color: var(--page);
+  border-bottom: none;
+  z-index: 100;
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gutter);
+}
+
+.flex {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rule {
+  border: none;
+  border-top: 1px solid var(--graphite);
+  margin: var(--space-8) 0;
+}
+
+.rule-thick {
+  border-top-width: 2px;
+  border-top-color: var(--ink);
+}
